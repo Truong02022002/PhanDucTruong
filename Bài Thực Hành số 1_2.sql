@@ -84,14 +84,14 @@ ORDER BY total_quantity DESC*/
 --Câu 15. Đưa ra masp,tensp của các sản phẩm do công ty “Samsung’ sản xuất do nhân viên có mã ‘NV01’ nhập.
 /*SELECT masp, tensp
 FROM Sanpham SP JOIN Hangsx HSX ON SP.mahangsx = HSX.mahangsx
-WHERE tenhang = 'Samsung' AND masp IN (SELECT masp FROM Nhap WHERE manv = 'NV01');*/
+WHERE tenhang = 'Samsung' AND manv = 'NV01';*/
 
 --Câu 16. Đưa ra sohdn,masp,soluongN,ngayN của mặt hàng có masp là ‘SP02’, được nhân viên ‘NV02’ xuất.
 /*SELECT n.sohdn, SP.masp, soluongN, n.ngaynhap
 FROM Sanpham SP JOIN Nhap n ON SP.masp = n.masp
-WHERE SP.masp like 'SP02' AND SP.masp IN (SELECT masp FROM Nhap WHERE manv = 'NV02');*/
+WHERE SP.masp like 'SP02' AND manv = 'NV02';*/
 
 --Câu 17. Đưa ra manv,tennv đã xuất mặt hàng có mã ‘SPO2’ ngày ’03-02-2020.
 /*SELECT nv.manv,nv.tennv 
 FROM Nhanvien nv JOIN Xuat x ON nv.manv = x.manv
-WHERE x.masp like 'SP02' AND x.masp IN (SELECT masp FROM Xuat WHERE ngayxuat = '03-02-2020');*/
+WHERE x.masp like 'SP02' AND ngayxuat = '03-02-2020';*/
